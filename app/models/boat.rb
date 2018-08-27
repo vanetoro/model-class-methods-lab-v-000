@@ -4,6 +4,7 @@ class Boat < ActiveRecord::Base
   has_many    :classifications, through: :boat_classifications
 
   def self.first_five
+<<<<<<< HEAD
     self.all.limit(5)
   end
 
@@ -30,5 +31,9 @@ class Boat < ActiveRecord::Base
 
   def self.with_three_classifications
     joins(:classifications).group('boat_id').having('count(classification_id) = 3')
+=======
+    five = self.first(5)
+    # binding.pry
+>>>>>>> 388dcf7532f749e75045c8bc60cbac327b13ecf2
   end
 end
