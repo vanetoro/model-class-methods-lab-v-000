@@ -23,3 +23,4 @@ class Captain < ActiveRecord::Base
    def non_sailors
      self.where.not("id in (?)", self.talented_seafarers(:id))
   end
+end
