@@ -11,7 +11,7 @@ class Boat < ActiveRecord::Base
     self.all.where("length < ?", 20)
   end
 
-  def self.ship
+  def self.shiplear
     self.all.where("length > ?", 20)
   end
 
@@ -30,6 +30,6 @@ class Boat < ActiveRecord::Base
 
   def self.with_three_classifications
     joins(:classifications).group('boat_id').having('count(classification_id) = 3')
-    five = self.first(5)
+
   end
 end
